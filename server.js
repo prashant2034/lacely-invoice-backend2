@@ -17,7 +17,7 @@ app.use(express.json()); // for /api routes
 app.use(
   express.json({
     verify: (req, res, buf) => {
-      req.rawBody = buf.toString();
+      req.rawBody = buf.toString("utf8");
     },
   })
 );
