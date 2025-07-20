@@ -67,7 +67,7 @@ app.get("/api/credit-notes", (req, res) => {
 app.post(
   "/webhook/order",
   express.json({ type: "*/*" }),
-  verifyShopifyWebhook,
+  // verifyShopifyWebhook,
   (req, res) => {
     const order = req.body;
     console.log("✅ New order received from Shopify:", order.id);
