@@ -34,6 +34,7 @@ function verifyShopifyWebhook(req, res, next) {
     .digest("base64");
 
   if (digest === hmacHeader) {
+    console.log("Verified Request")
     next();
   } else {
     console.warn("❌ Invalid Shopify webhook signature");
@@ -67,7 +68,7 @@ app.get("/api/credit-notes", (req, res) => {
 app.post(
   "/webhook/order",
   express.json({ type: "*/*" }),
-  // verifyShopifyWebhook,
+  verifyShopifyWebhook,
   (req, res) => {
     const order = req.body;
     console.log(order);
