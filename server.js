@@ -70,6 +70,7 @@ app.post(
   // verifyShopifyWebhook,
   (req, res) => {
     const order = req.body;
+    console.log(order);
     console.log("✅ New order received from Shopify:", order.id);
     // 📦 You can trigger invoice generation here
 
