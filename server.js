@@ -33,8 +33,10 @@ mongoose
 // ✅ Routes
 const webhooksRouter = require("./routes/webhooks.route.js");
 const receiptsRouter = require("./routes/reciepts.routes.js");
+const invoiceRouter = require("./routes/invoice.routes.js");
 app.use("/webhook", webhooksRouter);
 app.use("/api/receipts", receiptsRouter);
+app.use("/api/invoices", invoiceRouter);
 
 
 
